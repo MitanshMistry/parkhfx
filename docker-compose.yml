@@ -1,0 +1,22 @@
+# Local development database: PostgreSQL + PostGIS (free, runs on your machine).
+# Start with:  docker compose up -d
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: parkhfx-db
+    environment:
+      POSTGRES_DB: parkhfx
+      POSTGRES_USER: parkhfx
+      POSTGRES_PASSWORD: parkhfx
+    ports:
+      - "5432:5432"
+    volumes:
+      - parkhfx-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U parkhfx -d parkhfx"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  parkhfx-data:

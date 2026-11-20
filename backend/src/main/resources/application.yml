@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: parkhfx
+  datasource:
+    # Defaults match docker-compose.yml. Override with environment variables.
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/parkhfx}
+    username: ${DB_USER:parkhfx}
+    password: ${DB_PASSWORD:parkhfx}
+  flyway:
+    enabled: true
+
+app:
+  jwt:
+    # MUST be overridden in any deployed environment (set the JWT_SECRET env var).
+    # HS256 needs at least 32 bytes; the app refuses to start with a shorter one.
+    secret: ${JWT_SECRET:dev-only-secret-change-me-dev-only-secret-change-me}
+    ttl-minutes: 1440
+  demo:
+    # Enables POST /api/v1/auth/demo (one-click login for reviewers).
+    enabled: ${DEMO_ENABLED:true}
+  cors:
+    # Comma-separated list of allowed frontend origins.
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
