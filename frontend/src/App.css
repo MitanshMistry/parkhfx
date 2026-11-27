@@ -4,7 +4,7 @@
 .topbar { position: relative; height: 82px; padding: 0 5.5%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e5e9e3; background: #fbfcfa; }
 .brand { display: flex; align-items: center; gap: 10px; color: #17231f; font: 700 22px 'Space Grotesk', sans-serif; text-decoration: none; letter-spacing: -.8px; }
 .brand > span:last-child span { color: #e97157; }
-.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px; color: #fff; background: #e97157; font: 700 18px 'Space Grotesk', sans-serif; transform: rotate(-8deg); }
+.brand-mark { display: block; width: 34px; height: 34px; border-radius: 10px; }
 .main-nav { display: flex; gap: 34px; margin-left: 80px; }
 .main-nav a, .link-button { color: #65736d; font-size: 13px; font-weight: 600; text-decoration: none; }
 .main-nav a.active { color: #17231f; }
@@ -266,7 +266,6 @@ h1 em,
 .forgot-link,
 .auth-switch a { color: #d65f49; }
 
-.brand-mark,
 .button-coral { background: #d65f49; }
 
 .button-coral:hover { background: #bd503d; }
@@ -365,7 +364,6 @@ h3,
 .forgot-link,
 .auth-switch a { color: #a66a3f; }
 
-.brand-mark,
 .button-dark,
 .button-coral { background: #075b63; }
 .button-dark:hover,

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { CircleMarker, MapContainer, TileLayer } from 'react-leaflet'
 import { getDemoListingDetail } from '../data/demoDetails'
+import parkhfxMark from '../assets/parkhfx-mark.svg'
 import parkingPlaceholder from '../assets/parking-placeholder.svg'
 
 export function ListingDetailPage() {
@@ -16,7 +17,7 @@ export function ListingDetailPage() {
     <main className="detail-page">
       <header className="detail-header">
         <Link className="brand" to="/explore">
-          <span className="brand-mark">P</span>
+          <img alt="" className="brand-mark" src={parkhfxMark} />
           <span>Park<span>HFX</span></span>
         </Link>
         <nav className={`main-nav ${mobileNavOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import parkhfxMark from '../assets/parkhfx-mark.svg'
 
 export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
   const isLogin = mode === 'login'
@@ -9,7 +10,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
   return (
     <main className="auth-page">
       <Link className="brand auth-brand" to="/explore">
-        <span className="brand-mark">P</span>
+        <img alt="" className="brand-mark" src={parkhfxMark} />
         <span>Park<span>HFX</span></span>
       </Link>
       <section className="auth-card">

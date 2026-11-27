@@ -11,6 +11,7 @@ import {
 import { Link } from 'react-router-dom'
 import type { ListingSearchParams, ListingSummary } from './api'
 import { searchDemoListings } from './services/demoService'
+import parkhfxMark from './assets/parkhfx-mark.svg'
 import parkingPlaceholder from './assets/parking-placeholder.svg'
 import 'leaflet/dist/leaflet.css'
 import './App.css'
@@ -224,7 +225,7 @@ function App() {
     <main className="app-shell">
       <header className="topbar">
         <Link className="brand" to="/explore">
-          <span className="brand-mark">P</span>
+          <img alt="" className="brand-mark" src={parkhfxMark} />
           <span>Park<span>HFX</span></span>
         </Link>
         <nav className={`main-nav ${mobileNavOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">

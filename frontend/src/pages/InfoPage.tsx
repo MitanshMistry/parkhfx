@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import parkhfxMark from '../assets/parkhfx-mark.svg'
 
 export function HowItWorksPage() {
   return (
@@ -49,7 +50,7 @@ function InfoHeader({ activePage }: { activePage: 'how-it-works' | 'host' }) {
 
   return (
     <header className="topbar">
-      <Link className="brand" to="/explore"><span className="brand-mark">P</span><span>Park<span>HFX</span></span></Link>
+      <Link className="brand" to="/explore"><img alt="" className="brand-mark" src={parkhfxMark} /><span>Park<span>HFX</span></span></Link>
       <nav className={`main-nav ${mobileNavOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">
         <Link onClick={() => setMobileNavOpen(false)} to="/explore">Explore</Link>
         <Link className={activePage === 'how-it-works' ? 'active' : ''} onClick={() => setMobileNavOpen(false)} to="/how-it-works">How it works</Link>

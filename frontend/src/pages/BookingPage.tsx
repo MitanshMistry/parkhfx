@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { getDemoListingDetail } from '../data/demoDetails'
+import parkhfxMark from '../assets/parkhfx-mark.svg'
 import parkingPlaceholder from '../assets/parking-placeholder.svg'
 
 const timeOptions = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
@@ -48,7 +49,7 @@ export function BookingPage() {
   return (
     <main className="booking-page">
       <header className="detail-header">
-        <Link className="brand" to="/explore"><span className="brand-mark">P</span><span>Park<span>HFX</span></span></Link>
+        <Link className="brand" to="/explore"><img alt="" className="brand-mark" src={parkhfxMark} /><span>Park<span>HFX</span></span></Link>
         <nav className={`main-nav ${mobileNavOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">
           <Link className="active" onClick={() => setMobileNavOpen(false)} to="/explore">Explore</Link>
           <Link onClick={() => setMobileNavOpen(false)} to="/how-it-works">How it works</Link>
@@ -111,7 +112,7 @@ export function CheckoutPage() {
   return (
     <main className="booking-page">
       <header className="detail-header">
-        <Link className="brand" to="/explore"><span className="brand-mark">P</span><span>Park<span>HFX</span></span></Link>
+        <Link className="brand" to="/explore"><img alt="" className="brand-mark" src={parkhfxMark} /><span>Park<span>HFX</span></span></Link>
         <nav className={`main-nav ${mobileNavOpen ? 'mobile-open' : ''}`} aria-label="Main navigation">
           <Link className="active" onClick={() => setMobileNavOpen(false)} to="/explore">Explore</Link>
           <Link onClick={() => setMobileNavOpen(false)} to="/how-it-works">How it works</Link>
